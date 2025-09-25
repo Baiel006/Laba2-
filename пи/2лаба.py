@@ -24,13 +24,18 @@ def task4():
     text = input("Введите строку: ")
     word = input("Введите слово для поиска: ")
     words = text.split()
+    total = len(words)  # количество слов в строке
+
     if word in words:
         index = words.index(word) + 1  # +1 чтобы нумерация начиналась с 1
         print("Слово найдено:", word,
               "| Количество букв:", len(word),
-              "| Позиция в строке:", index)
+              "| Позиция в строке:", index,
+              "| Всего слов в строке:", total)
     else:
-        print("Слово не найдено.")
+        print("Слово не найдено.",
+              "| Всего слов в строке:", total)
+
 
 
 
