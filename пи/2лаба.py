@@ -2,14 +2,14 @@ def task1():
     text = input("Введите строку: ")
     words = text.split()
     longest = max(words, key=len)
-    print("Самое длинное слово:", longest)
+    print("Самое длинное слово:", longest, "| Количество букв:", len(longest))
 
 
 def task2():
     text = input("Введите строку (слова через ;) : ")
     words = text.split(";")
     longest = max(words, key=len)
-    print("Самое длинное слово:", longest)
+    print("Самое длинное слово:", longest, "| Количество букв:", len(longest))
 
 
 def task3():
@@ -17,22 +17,30 @@ def task3():
     delimiter = input("Введите символ-разделитель: ")
     words = text.split(delimiter)
     shortest = min(words, key=len)
-    print("Самое короткое слово:", shortest)
+    print("Самое короткое слово:", shortest, "| Количество букв:", len(shortest))
 
 
 def task4():
     text = input("Введите строку: ")
     word = input("Введите слово для поиска: ")
-    if word in text.split():
-        print("Слово найдено!")
+    words = text.split()
+    if word in words:
+        index = words.index(word) + 1  # +1 чтобы нумерация начиналась с 1
+        print("Слово найдено:", word,
+              "| Количество букв:", len(word),
+              "| Позиция в строке:", index)
     else:
         print("Слово не найдено.")
+
 
 
 def task5():
     text = input("Введите предложение: ")
     words = text.split()
     print("Количество слов:", len(words))
+    # дополнительно выведем длину каждого слова
+    for w in words:
+        print(w, "-", len(w), "букв(ы)")
 
 
 def main():
@@ -42,7 +50,7 @@ def main():
         print("2. Найти самое длинное слово (разделитель — ; )")
         print("3. Найти самое короткое слово (разделитель задаёт пользователь)")
         print("4. Найти слово в строке")
-        print("5. Посчитать количество слов")
+        print("5. Посчитать количество слов (и длину каждого)")
         print("0. Выход")
 
         choice = input("Выберите номер задания: ")
