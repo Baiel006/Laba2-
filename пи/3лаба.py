@@ -21,18 +21,40 @@ def first_task():
 
 
 # --- Задание 2: Общество в XXI веке с функцией ---
+
+def is_kindergarten(age):
+    return 0 <= age < 7
+
+
+def is_school(age):
+    return 7 <= age < 18
+
+
+def is_college(age):
+    return 18 <= age < 25
+
+
+def is_working(age):
+    return 25 <= age < 60
+
+
+def is_retired(age):
+    return 60 <= age <= 120
+
+
 def second_task():
     print("Общество в начале XXI века")
     age = int(input("Введите ваш возраст: "))
-    if 0 <= age < 7:
+
+    if is_kindergarten(age):
         print("Вам в детский сад")
-    elif 7 <= age < 18:
+    elif is_school(age):
         print("Вам в школу")
-    elif 18 <= age < 25:
+    elif is_college(age):
         print("Вам в профессиональное учебное заведение")
-    elif 25 <= age < 60:
+    elif is_working(age):
         print("Вам на работу")
-    elif 60 <= age <= 120:
+    elif is_retired(age):
         print("Вам предоставляется выбор")
     else:
         # Пятикратный вывод ошибки

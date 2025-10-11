@@ -1,0 +1,38 @@
+def add(a, b):
+    return a + b
+
+def sub(a, b):
+    return a - b
+
+def mul(a, b):
+    return a * b
+
+def div(a, b):
+    if b != 0:
+        return a / b
+    else:
+        return "Ошибка: деление на ноль!"
+
+def main():
+    while True:
+        print("\n=== Калькулятор ===")
+        print("1 - Сложение")
+        print("2 - Вычитание")
+        print("3 - Умножение")
+        print("4 - Деление")
+        print("0 - Выход")
+
+        choice = input("Ваш выбор: ")
+
+        if choice == "0":
+            print("Выход из программы.")
+            break
+
+        if choice in ("1", "2", "3", "4"):
+            a = float(input("Введите первое число: "))
+            b = float(input("Введите второе число: "))
+
+            if choice == "1":
+                print("Результат:", add(a, b))
+            elif choice == "2":
+                print("Результат:", sub(a,
